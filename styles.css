@@ -1,1 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Work+Sans:wght@400;500&display=swap');
+
+
+/* -------- CSS Variables ---------- */
+:root {
+    --colore-sage: #7A8B6F;
+    --color-sage-dark: #5C6B52;
+    --color-cream: #F7F3EA;
+    --color-cream-dark: #EFE8D8;
+    --color-charcoal: #2B2A26;
+    --color-white: #FFFFFF;
+
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Work Sans', sans-serif;
+    --max-width: 1280px;
+}
