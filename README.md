@@ -19,4 +19,6 @@ Day #3
     * How to prepare
     * Favorites
     * Footer
-* Started workiong on CSS as well (Worked on CSS section by section)
+* Started working on CSS as well (Worked on CSS section by section)
+* Started working on JS
+* Created mock server using postman
