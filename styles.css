@@ -249,3 +249,47 @@ ul {
    font-size: 15px;
    color: var(--color-sage-dark);
 }
+
+/* ---------- Grade Comparison (jQuery Tabs) ---------- */
+.grades {
+   padding: 100px 0;
+   background-color: var(--color-cream-dark);
+}
+ 
+.grade-tabs ul {
+   display: flex;
+   gap: 40px;
+   border-bottom: 1px solid var(--color-white);
+   margin-bottom: 40px;
+}
+ 
+.grade-tabs ul li {
+   padding-bottom: 16px;
+   border-bottom: 3px solid transparent;
+}
+ 
+.grade-tabs ul li a {
+   font-size: 16px;
+   font-weight: 500;
+   color: var(--color-charcoal);
+   opacity: 0.6;
+   outline: none;
+}
+ 
+.grade-tabs ul li.ui-tabs-active {
+   border-bottom-color: var(--color-sage);
+}
+ 
+.grade-tabs ul li.ui-tabs-active a {
+   opacity: 1;
+   color: var(--color-sage-dark);
+}
+ 
+.tab-icon {
+   margin-right: 8px;
+}
+ 
+.grade-tabs > div p {
+   font-size: 16px;
+   max-width: 700px;
+}
