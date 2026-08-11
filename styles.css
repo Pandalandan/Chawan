@@ -63,7 +63,7 @@ ul {
 
 .btn-primary {
     background-color: var(--color-sage);
-    color: var(--color-white);
+    color: var(--color-charcoal);
 }
 
 .btn-primary:hover {
@@ -120,4 +120,48 @@ ul {
     max-width: 700px;
     margin: 0 auto 36px;
     opacity: 0.85;
+}
+
+/* ---------- Our Story ---------- */
+.story {
+    padding: 100px 0;
+    background-color: var(--color-cream-dark);
+}
+
+.story-inner {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.story-text {
+    flex: 1;
+}
+
+.story-text h2 {
+    font-size: 34px;
+    margin-bottom: 24px;
+}
+
+.story-text p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.sourcing-note {
+    font-size: 14px;
+    color: var(--color-sage-dark);
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.story-image {
+    flex: 1;
+}
+
+.story-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 4px;
 }
