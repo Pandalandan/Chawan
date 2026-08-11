@@ -45,3 +45,15 @@ Problem #1: Making the mock server using postman
     * Being clear about dataType helps prevent silent parsing errors because $.get() doesn't always assume the correct answer type.
     * Browser caching can make a real fix look like it didn't work — a hard refresh (Ctrl+Shift+R) is worth trying before assuming code is wrong.
     * My data and my real files must have identical filenames, with only a minor naming discrepancy (.png vs.A simple and frequent source of "broken image" issues is jpg, or wako vs. wa-latte.
+
+
+Problem #2: Missing one key code for script
+
+* What was not working
+    * The Ceremonial, Culinary, and How to Choose Grade Comparison tabs were completely broken. Nothing happened when you clicked on any of the tab buttons; neither the content nor the appearance changed.
+* What I tried
+    * I opened the browser console (DevTools) to check for errors. I saw this message: Uncaught TypeError: $(...).tabs is not a function. Since other sections of the website, like as the Shop area, were loading without any issues, this indicated to me that jQuery itself was functioning, but the.tabs() method in particular was not accessible.
+* What fixed the problem
+    * I discovered that I was completely missing the jQuery UI script tag. The.tabs() widget, which comes from a different library called jQuery UI and needs to be linked in the HTML as its own script element, is not included by jQuery core alone. This script tag must be added alongside the other external library scripts, and it must load after jQuery core but before my own script.js file, as I recalled from the video exercises. The tabs began functioning right away once I put the missing line to my HTML's head in the proper order.
+* What I learned 
+    * Some jQuery features, such as UI widgets (tabs, accordions, sliders, etc.), require loading jQuery UI as an extra, independent script. Instead of an error in my own code, a "not a function" issue thrown by a jQuery method typically indicates that the necessary library or plugin script is just not loaded.
