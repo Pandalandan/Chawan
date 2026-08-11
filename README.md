@@ -8,4 +8,16 @@ Day #1
 Day #2
 * Finalizing the wireframe
 * Started GitHub repository 
-* Start building the HTML
+* Started building the HTML page
+
+Day #3 
+* Started working on each section of the page 
+    * Header
+    * Story
+    * Shop
+    * How to prepare
+    * Favorites
+    * Footer
+
+Day #4
+* Started working on CSS
