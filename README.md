@@ -1,5 +1,8 @@
 # Chawan
 Matcha Online Shop
+--------------------------------------------------
+
+I did not use generative AI tools for this project. I used only approved course materials, instructor examples, documentation, and my own work.
 
 --------------------------------------------------
 
@@ -26,7 +29,9 @@ Day #3
 * Started working on CSS as well (Worked on CSS section by section)
 * Started working on JS
 * Created mock server using postman
+* Finished working on JS [Link text](https://www.youtube.com/watch?v=gor5BvT2z88) <- carousel I learned 2 weeks ago that I applied in the project. A friend of mine helped me fix it as well. 
 
+* Finished working on all HTML, CSS, and JS files. Used [Link text](https://validator.w3.org/) to double check my codes (HTML AND CSS). I used console to check JS codes errors.
 
 --------------------------------------------------
 
@@ -72,7 +77,17 @@ Problem #3: HTML code error
 * What I learned 
     * Not all bugs result in an error message. Setting an image's src to undefined fails silently with no output in the terminal because JavaScript simply returns undefined rather than failing when it attempts to read a data-attribute that doesn't exist. My JS code was only as good as the data it was really reading from the page, which showed me that HTML and JavaScript must line up precisely. Checking the actual HTML in the browser inspector, as opposed to simply rereading my own code, is how I find a discrepancy like this when there isn't an error to indicate the issue.
 
-Problem #4: 
+Problem #4: Carousel JS
+* What was not working
+    * The "How to Prepare" carousel's prev/next arrow buttons weren't displaying properly. Instead of appearing as whole circular buttons, just little fragments of the arrow symbols were visible at the carousel's edges.
+* What I tried
+    * Using negative left/right values in CSS, I positioned the arrow buttons just outside the carousel box's edges so they would sit half-overlapping the image, a typical carousel design pattern. In order to prevent the other slides going in and out from being seen outside the carousel window, I also had overflow: hidden on the same container.
+* What fixed the problem
+    * Since my arrow buttons were purposefully positioned at negative positions, I discovered that the overflow: hidden property was clipping everything positioned outside the container's limits. I separated the carousel into two different layers: an inner .carousel-window div with an outer overflow and a hidden overflow (used only to conceal the sliding track of photos).carousel div that remains fully displayed. In order to ensure that the arrow buttons would never be clipped regardless of which element had overflow: hidden, I then moved them to sit entirely inside the picture area (with a tiny inset, about 16px from each edge) rather than overlapping outside of it.
+* What I learned
+    * overflow: hidden not only hides overflow content in one direction, but it also clips everything that is positioned outside the limits of that particular element, including buttons and other elements that I really wanted to remain visible. Instead of putting all of the styles on one large wrapped container, this taught me to consider more carefully which HTML element should "own" particular CSS attribute. I gained greater control and completely avoided the dispute by dividing a component into more specialized, purpose-built inner containers (one for layout, one for hiding overflow).
+    
+Problem #5: After pressing the heart on products, its not showing on the favorite sections.
 * What was not working
     * Favorites saved correctly to localStorage, but never appeared in the Favorites section
 * What I tried
@@ -81,3 +96,4 @@ Problem #4:
     * Found allProducts.length was 0 — traced it to a missing allProducts = products; line inside the AJAX callback (I had to ask a friend of mine since I was stuck finding the code for a whole hour)
 * What I learned 
     * A feature can look "half-working" while the real bug sits in an unrelated part of the code; testing pieces individually in the console is faster than guessing; partial copy-paste risks silently dropping code other parts depend on
+
