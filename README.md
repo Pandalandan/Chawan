@@ -1,6 +1,8 @@
 # Chawan
 Matcha Online Shop
 
+--------------------------------------------------
+
 DEVELOPMENT LOG
 
 Day #1 
