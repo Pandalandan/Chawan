@@ -47,3 +47,53 @@ $(function () {
    });
 });
  
+// ===================== HOW TO PREPARE: CAROUSEL =====================
+// This carousel only moves when the user clicks an arrow or a dot. it never auto-plays. I learned this method through watching youtube videos about JS carousel. It looks nice so I wanted to add this.
+$(function () {
+   const $slides = $(".carousel-slide");
+   const $track = $(".carousel-track");
+   const $dotsContainer = $("#carouselDots");
+   const $caption = $("#carouselCaption");
+   const totalSlides = $slides.length;
+ 
+   // Keeps track of which slide is currently showing. Starts at 0
+   let currentIndex = 0;
+ 
+   // Build one small dot button for every slide we have, so the number of dots always matches the number of slides automatically
+   for (let i = 0; i < totalSlides; i++) {
+      $dotsContainer.append(`<button class="carousel-dot" data-index="${i}" aria-label="Go to step ${i + 1}"></button>`);
+   }
+   const $dots = $(".carousel-dot");
+ 
+   // This is the function that actually moves the carousel.
+   function goToSlide(index) {
+      currentIndex = index;
+      $track.css("transform", `translateX(-${currentIndex * 100}%)`);
+ 
+      // Update which dot looks "active" so the user can see.
+      $dots.removeClass("active");
+      $dots.eq(currentIndex).addClass("active");
+ 
+      // Each image stores its own caption text in a data-caption attribute.
+      const newCaption = $slides.eq(currentIndex).find("img").data("caption");
+      $caption.text(newCaption);
+   }
+ 
+   // Clicking the right arrow moves forward one step.
+   $(".carousel-next").on("click", function () {
+      goToSlide((currentIndex + 1) % totalSlides);
+   });
+ 
+   // Clicking the left arrow moves back one step.
+   $(".carousel-prev").on("click", function () {
+      goToSlide((currentIndex - 1 + totalSlides) % totalSlides);
+   });
+ 
+   // Clicking a dot jumps straight to that step instead of having to click through the arrows one at a time.
+   $dotsContainer.on("click", ".carousel-dot", function () {
+      goToSlide($(this).data("index"));
+   });
+ 
+   // Set up the very first slide and dot as active as soon as the page loads.
+   goToSlide(0);
+});
