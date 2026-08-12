@@ -2,6 +2,7 @@
 Matcha Online Shop
 
 DEVELOPMENT LOG
+
 Day #1 
 * Brainstormed what kind of website I would do
 * Looked through different colors for Calm, Soft, and Warmer (mostly colors that matches MATCHA)
@@ -25,6 +26,7 @@ Day #3
 * Created mock server using postman
 
 
+--------------------------------------------------
 
 DEBUGGING LOG
 
