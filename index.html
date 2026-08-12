@@ -95,6 +95,11 @@
    <section id="grades" class="grades">
       <div class="container">
          <h2 class="section-heading">Ceremonial vs. Culinary — What's the Difference?</h2>
+
+          <div class="grades-inner">
+            <div class="grade-image-wrap">
+               <img id="gradeImage" src="images/grade-ceremonial.jpg" alt="Ceremonial matcha being whisked in a traditional bowl">
+            </div>
  
          <div id="gradeTabs" class="grade-tabs">
             <ul>
@@ -102,7 +107,7 @@
                <li><a href="#tab-culinary"><span class="tab-icon">&#127859;</span>Culinary</a></li>
                <li><a href="#tab-choose"><span class="tab-icon">?</span>How to Choose</a></li>
             </ul>
-            <div id="tab-ceremonial">
+            <div id="tab-ceremonial" data-image="images/grade-ceremonial.jpg">
                <p>
                   Made from the youngest tea leaves, hand-picked in the first spring
                   harvest and shaded for several weeks before picking to boost
@@ -112,7 +117,7 @@
                   Vivid green, smooth, and naturally sweet with very little bitterness.
                </p>
             </div>
-            <div id="tab-culinary">
+            <div id="tab-culinary" data-image="images/grade-culinary.jpg">
                <p>
                   Made from slightly older leaves harvested later in the season.
                   Bolder and more bitter on its own, which is exactly what makes it
@@ -121,14 +126,15 @@
                   better choice for lattes, smoothies, and recipes.
                </p>
             </div>
-            <div id="tab-choose">
-               <p>
+            <div id="tab-choose" data-image="images/grade-choose.jpg">
+                <p>
                   If you're planning to drink it straight, traditionally whisked in
                   a bowl with hot water, go ceremonial. If you're making a latte,
                   adding it to baking, or blending it into a smoothie, culinary
                   grade will taste better for less money. Some people keep both on
                   hand for different moods.
-               </p>
+                </p>
+               </div>
             </div>
          </div>
       </div>

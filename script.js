@@ -34,7 +34,16 @@ $(function () {
    });
 });
 
-// This handles showing/hiding the right content when a tab is clicked, so we don't have to write that click logic ourselves.
+// ===================== GRADE COMPARISON: JQUERY TABS =====================
+// This turns our plain list of tab links and content sections into an actual clickable tab widget. jQuery UI's .tabs()
 $(function () {
    $("#gradeTabs").tabs();
+
+   // jQuery UI fires a "tabsactivate" event every time the user switches to a different tab.
+   $("#gradeTabs").on("tabsactivate", function (event, ui) {
+      // Each tab panel has a data-image attribute in the HTML that tells us which photo goes with it.
+      const newImage = ui.newPanel.data("image");
+      $("#gradeImage").attr("src", newImage);
+   });
 });
+ 
