@@ -71,3 +71,13 @@ Problem #3: HTML code error
     * I found that the content div of each tab was meant to have a data-image="..." tag that told the JavaScript which photo was associated with that tab. The real data-image attributes were absent from my HTML page, even tho my JavaScript code was already correctly prepared to retrieve that attribute (ui.newPanel.data ("image"). The images began to switch correctly after I inserted data-image="..." to each of the three tab divs.
 * What I learned 
     * Not all bugs result in an error message. Setting an image's src to undefined fails silently with no output in the terminal because JavaScript simply returns undefined rather than failing when it attempts to read a data-attribute that doesn't exist. My JS code was only as good as the data it was really reading from the page, which showed me that HTML and JavaScript must line up precisely. Checking the actual HTML in the browser inspector, as opposed to simply rereading my own code, is how I find a discrepancy like this when there isn't an error to indicate the issue.
+
+Problem #4: 
+* What was not working
+    * Favorites saved correctly to localStorage, but never appeared in the Favorites section
+* What I tried
+    * Checked the container existed, checked the render function was correct, called it manually from console
+* What fixed the problem
+    * Found allProducts.length was 0 — traced it to a missing allProducts = products; line inside the AJAX callback (I had to ask a friend of mine since I was stuck finding the code for a whole hour)
+* What I learned 
+    * A feature can look "half-working" while the real bug sits in an unrelated part of the code; testing pieces individually in the console is faster than guessing; partial copy-paste risks silently dropping code other parts depend on
